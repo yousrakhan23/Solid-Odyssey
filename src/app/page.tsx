@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Loader from "@/components/Loader";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Prosto_One } from "next/font/google";
 import { Exo_2 } from "next/font/google";
 
