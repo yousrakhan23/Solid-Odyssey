@@ -29,11 +29,17 @@ const Loader = ({ onFinish }: { onFinish: () => void }) => {
 
   return (
     <AnimatePresence>
-    <motion.div
-      className="fixed inset-0 bg-zinc-700 flex flex-col items-center justify-center text-white z-50"
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+  <motion.div
+    className="fixed inset-0 flex flex-col items-center justify-center text-white z-50 bg-cover h-full w-full"
+    style={{ backgroundImage: "url('/images/solid-01.jpg')" }}
+    initial={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+  >
+    {/* Optional Dark Overlay */}
+    <div className="absolute inset-0 bg-black/60 z-0" />
+
+    {/* Foreground Content */}
+    <div className="relative z-10 flex flex-col items-center">
       <p className={`${fontExo.className} mb-4 tracking-widest`}>LOADING</p>
       <div className="w-64 h-1 bg-gray-500 overflow-hidden">
         <motion.div
@@ -42,8 +48,10 @@ const Loader = ({ onFinish }: { onFinish: () => void }) => {
           transition={{ ease: 'easeInOut', duration: 0.2 }}
         />
       </div>
-    </motion.div>
-    </AnimatePresence>
+    </div>
+  </motion.div>
+</AnimatePresence>
+
   );
 };
 
