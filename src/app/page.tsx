@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Loader from "@/components/Loader";
+import HeroSection from "@/components/HeroSection";
+import Header from "@/components/Header";
 import { motion } from "framer-motion";
 import { Prosto_One } from "next/font/google";
 import { Exo_2 } from "next/font/google";
@@ -57,18 +59,20 @@ export default function Home() {
         <div className="relative min-h-screen">
           {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-50 z-0"
+            className="absolute inset-0 bg-cover bg-center z-0"
             style={{ backgroundImage: "url('/images/furniture.jpg')" }}
           ></div>
+
+          <div className="absolute inset-0 bg-black/80 z-0"></div>
 
           {/* Foreground Text */}
           <div className="relative z-10 grid place-items-center min-h-screen text-center">
             <div>
-              <h1 className={`${fontProsto.className} text-6xl text-black`}>
+              <h1 className={`${fontProsto.className} text-6xl text-white`}>
                 Solid Odyssey
               </h1>
               <p
-                className={`${fontExo.className} text-xl text-gray-600 mt-4 tracking-[0.5em] uppercase`}
+                className={`${fontExo.className} text-xl text-gray-500 mt-4 tracking-[0.5em] uppercase`}
               >
                 furniture store
               </p>
@@ -76,6 +80,11 @@ export default function Home() {
           </div>
         </div>
       )}
+      <div>
+        <Header />
+        <HeroSection />
+      </div>
+      
     </>
   );
 }
