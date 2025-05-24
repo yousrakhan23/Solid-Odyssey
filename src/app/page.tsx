@@ -29,7 +29,7 @@ export default function Home() {
 
   const handleLoaderFinish = () => {
     setLoadingFinished(true);
-    setTimeout(() => setCurtainOpened(true), 400); // Short delay for effect
+    setTimeout(() => setCurtainOpened(true), 400); 
   };
 
   return (
